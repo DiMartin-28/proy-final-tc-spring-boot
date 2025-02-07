@@ -3,6 +3,8 @@ package com.dimartin.proy_fin_spring_boot.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,6 +14,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 
 
 @Entity
@@ -21,16 +25,21 @@ public class Venta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo_venta;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@PastOrPresent
 	private LocalDate fecha_venta;
 	private double total;
 	
 	@ManyToMany
 	@JoinTable( name="ventas_productos", joinColumns = {@JoinColumn(name="codigo_venta")},
 	inverseJoinColumns = {@JoinColumn(name="codigo_producto")})
+	@NotNull
 	private List<Producto> lista_productos;
 	
 	@ManyToOne
 	@JoinColumn(name="un_cliente_id_cliente", referencedColumnName = "id_cliente")
+	@NotNull
 	private Cliente un_cliente;
 	
 	

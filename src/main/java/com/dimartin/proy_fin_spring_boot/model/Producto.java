@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="productos")
@@ -13,9 +14,13 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo_producto;
+	@NotNull
 	private String nombre;
+	@NotNull
 	private String marca;
+	@NotNull
 	private Double costo;
+	@NotNull(message="Es requerida la categoria")
 	private int cantidad_disponible;
 	
 	public Producto() {

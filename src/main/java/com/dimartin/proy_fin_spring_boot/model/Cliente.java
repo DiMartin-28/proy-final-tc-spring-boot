@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="clientes")
@@ -13,19 +14,19 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy  = GenerationType.IDENTITY)
 	private Long id_cliente;
+	@NotNull
 	private String nombre;
+	@NotNull
 	private String apellido;
+	@NotNull
 	private String dni;
 	
 	
 	public Cliente() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
 	public Cliente(Long id_cliente, String nombre, String apellido, String dni) {
-		super();
 		this.id_cliente = id_cliente;
 		this.nombre = nombre;
 		this.apellido = apellido;
