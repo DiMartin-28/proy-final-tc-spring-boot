@@ -31,15 +31,6 @@ La aplicación debe servir de backend para futuras aplicaciones web y mobile, fa
 -  Reportes de ventas y stock
 -  Manejo de errores y excepciones centralizado
 
-##  Estado actual
-
-Refactorización en curso:  
-- [x] Separación de capas (controller, service, repository)  
-- [x] Validaciones y manejo de excepciones  
-- [x] DTOs implementados  
-- [ ] Controlador de sesiones (pendiente)  
-- [ ] Documentación Swagger (pendiente)  
-
 ## 📱 Escenario de uso
 
 La API fue diseñada para ser consumida por:
@@ -58,12 +49,32 @@ src
 
 
 ##  Endpoints Principales
-
-(Esto podés completarlo vos o generarlo con Swagger)
-
+  Productos
 - `POST /productos` → Crear producto  
-- `GET /productos` → Listar productos  
+- `GET /productos` → Listar productos
+- `GET /productos/id` → Listar producto por su código
+- `GET /productos/productos-venta/cod_venta` → Listar productos pertenecientes a una venta
+- `GET /productos/menos-cinco-unidades` → Listar productos con stock de menos de 5 unidades
+- `PUT /productos/id` → Modificar datos del producto
+- `PATCH /productos/stock` → Agrega stock a un producto
+  Cleintes
+
+  Ventas
 - `POST /ventas` → Registrar una venta  
 - `GET /ventas` → Listar ventas  
-- etc.
+- `GET /ventas`
+- `GET /ventas`
+- `GET /ventas`
+- `GET /ventas`
+- `GET /ventas`
+
+## Estado actual del proyecto
+-  En desarrollo / ✅ Completado (elegí uno y comentá brevemente si hay cosas por mejorar)
+
+## Autor
+
+Martín Díaz
+Estudiante de Análisis de Sistemas | Backend Developer
+
+LinkedIn | GitHub 
 
