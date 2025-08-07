@@ -50,31 +50,35 @@ src
 
 ##  Endpoints Principales
   Productos
-- `POST /productos` → Crear producto  
-- `GET /productos` → Listar productos
-- `GET /productos/id` → Listar producto por su código
-- `GET /productos/productos-venta/cod_venta` → Listar productos pertenecientes a una venta
-- `GET /productos/menos-cinco-unidades` → Listar productos con stock de menos de 5 unidades
-- `PUT /productos/id` → Modificar datos del producto
+- `POST /productos` → Crea producto  
+- `GET /productos` → Lista productos
+- `GET /productos/id` → Obtiene detalles de un producto por su código
+- `GET /productos/productos-venta/cod_venta` → Lista productos pertenecientes a una venta
+- `GET /productos/menos-cinco-unidades` → Lista productos con stock de menos de 5 unidades
+- `PUT /productos/id` → Modifica datos del producto
 - `PATCH /productos/stock` → Agrega stock a un producto
-  Cleintes
-
+  
+  Clientes
+- `POST /clientes` → Registra cliente
+- `GET /clientes` → Obtene listado de clientes
+- `PUT /clientes/id` → Edita cliente
+  
   Ventas
-- `POST /ventas` → Registrar una venta  
-- `GET /ventas` → Listar ventas  
-- `GET /ventas`
-- `GET /ventas`
-- `GET /ventas`
-- `GET /ventas`
-- `GET /ventas`
+- `POST /ventas` → Registra una venta de a un producto (ej: si el cliente quiere comprar 4 unidades pero solo hay 3 diponibles, le permite comprar 3)
+- `POST /ventas/complete` → Registra una venta (ej: la venta se realiza solo si hay la cantidad de stock que el cliente adquiir )
+- `GET /ventas` → Lista ventas  
+- `GET /ventas/cod_venta` → Obtiene detalles de una venta 
+- `GET /ventas/fecha` → Obtiene la sumatoria, el monto, y cantidad de ventas de un dia especifico
+- `GET /ventas/mayor-venta` → Obtiene la venta con major monto
+- `PUT /ventas/cod_venta` → Modifica datos de una venta seleccionada
 
 ## Estado actual del proyecto
--  En desarrollo / ✅ Completado (elegí uno y comentá brevemente si hay cosas por mejorar)
+-  Completado : Cumple con todos los requerimientos y se agregaron otros propios
+-  Por complear : pruebas unitarias y de componentes.
 
 ## Autor
 
 Martín Díaz
 Estudiante de Análisis de Sistemas | Backend Developer
 
-LinkedIn | GitHub 
 
