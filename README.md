@@ -49,6 +49,7 @@ src
 
 
 ##  Endpoints Principales
+
   Productos
 - `POST /productos` → Crea producto  
 - `GET /productos` → Lista productos
